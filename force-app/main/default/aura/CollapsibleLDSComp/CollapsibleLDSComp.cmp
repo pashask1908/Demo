@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="header" type="Aura.Component[]"/>
+    <aura:attribute name="body" type="Aura.Component[]"/>
+    <aura:attribute name="isCollapsed" type="Boolean"/>
+    <div class="{!v.isCollapsed ? 'slds-section':'slds-section slds-is-open'}">
+        <h3 class="slds-section__title" onclick="{!c.ToggleCollapseSection}" >
+            <button class="slds-button slds-section__title-action">                            
+                    <c:svg xlinkHref="/resource/SLDS202/assets/icons/utility-sprite/svg/symbols.svg#switch"
+                           ariaHidden="true" class="slds-section__title-action-icon slds-button__icon slds-button__icon--left slds-m-left--medium"/>
+               {!v.header}
+            </button>            
+        </h3>
+        <div class="{!v.isCollapsed ? 'slds-section__content slds-is-collapsed' : 'slds-section__content'}">
+            {!v.body}
+        </div>
+    </div>
+</aura:component>

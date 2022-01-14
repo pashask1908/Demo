@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- FileOrFolder --></label>
+    <name>box__FileOrFolder__c</name>
+    <picklistValues>
+        <masterLabel>File</masterLabel>
+        <translation><!-- File --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Folder</masterLabel>
+        <translation><!-- Folder --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,28 @@
+<apex:page standardController="Eclipse__c" extensions="CustomExtensionController">
+    <apex:form >
+    <apex:outputpanel >
+  <apex:actionstatus id="SearchingStatus">
+     <apex:facet name="start">
+        <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb;
+           height: 100%;opacity:0.65;width:100%;"> -->
+           <div class="waitingHolder" style="top: 74.2px; width: 100px;display: inline;">
+              <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+             
+              <span class="waitingDescription">Please Wait...</span>
+           </div>
+        </div>
+     </apex:facet>
+  </apex:actionstatus>
+</apex:outputpanel>
+        <apex:pageBlock title="Eclipse Custom Save">
+            <apex:pageblockButtons >
+                <apex:commandButton value="CustomSave" action="{!saveCustom}" status="SearchingStatus"/>
+            </apex:pageblockButtons>
+            <apex:pageBlockSection >
+                <apex:inputfield value="{!Eclipse__c.Name}"/>
+                <apex:inputfield value="{!Eclipse__c.Relationship__c}"/>
+                <apex:inputfield value="{!Eclipse__c.Account__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>  
+    </apex:form>
+</apex:page>

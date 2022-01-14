@@ -1,0 +1,106 @@
+<apex:page standardController="Campaign" sidebar="false" extensions="CRM_CampaignRelAssociationController">
+<style>
+.pbSubheader {
+background-color: #EEDADA!important;
+font-weight: bold !important;
+color: black !important;
+}
+</style>
+
+<apex:includeScript value="/support/console/20.0/integration.js"/>
+<script type="text/javascript">
+
+    function setTabTitle() {
+        sforce.console.setTabTitle('Add Relationship To Campaign');        
+    }
+    if(window.addEventListener) {
+        window.addEventListener('load', setTabTitle, false);
+    } else if(window.attachEvent) {
+        window.attachEvent('onload', setTabTitle);
+    }            
+</script>   
+<apex:form >
+  <apex:outputPanel id="mainFrom">
+      <apex:pageBlock title="Search Relationships" mode="edit" id="criteria">
+      <apex:pageMessages /> 
+      <script type="text/javascript">     
+        /*
+        *    function to handle checkbox selection
+        */
+        function doCheckboxChange(cb,itemId){         
+            if(cb.checked==true){
+                aSelectItem(itemId);
+            }
+            else {
+                aDeselectItem(itemId);
+            }            
+        }
+        function doAllCheckbox(cb){            
+            allItem();            
+        }        
+      </script> 
+      <!-- handle selected item -->
+      <apex:actionFunction name="aSelectItem" action="{!doSelectItem}" rerender="tabFooter,tabFooterRight">
+            <apex:param name="contextItem" value="" assignTo="{!contextItem}"/>
+      </apex:actionFunction>
+        
+        <!-- handle deselected item -->
+        <apex:actionFunction name="aDeselectItem" action="{!doDeselectItem}" rerender="tabFooter,tabFooterRight">
+            <apex:param name="contextItem" value="" assignTo="{!contextItem}"/>
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="allItem" action="{!doAllItem}" rerender="mainForm,results" />
+   
+        <apex:pageBlockSection columns="2">
+                <apex:outputText value="Relationship Name" style="font-size: 125%"/>
+                <apex:inputText value="{!relName}" style="font-size: 125%"/>
+                <apex:outputLabel value="Relationship Id" style="font-size: 125%"/>
+                <apex:inputText value="{!relNum}" style="font-size: 125%"/>
+                <apex:outputLabel value="Primary Relationship Advisor" style="font-size: 125%"/>
+                <apex:inputText value="{!prAdv}" style="font-size: 125%"/>
+                <apex:outputLabel value="Active Flag" style="font-size: 125%"/>
+                <apex:inputCheckbox value="{!relSts}"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!runQuery}" value="Search" rerender="mainFrom,results"/>
+            <apex:commandButton action="{!AddSelectedToCampaign}" value="Add Relationship(s)"/>
+            <apex:commandButton action="{!Cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+      
+      </apex:pageBlock>
+
+    <apex:outputPanel rendered="{!IsSearching && RelationshipsLstRecs.size >0}"> 
+    <apex:pageBlock mode="edit" id="results">
+         <div style="height:100%;">
+         <apex:pageBlockTable value="{!RelationshipsLstRecs}" var="rel" style="margin-bottom: 5px;valign:center;" id="resTable">            
+            <apex:column >
+                    <apex:facet name="header"><apex:inputCheckbox value="{!actionSel}" onchange="doAllCheckbox(this)"/></apex:facet>
+                    <apex:inputCheckbox value="{!rel.IsSelected}" onchange="doCheckboxChange(this,'{!rel.tRel.Id}')"/>
+            </apex:column>
+            <apex:column headerValue="Relationship Name" value="{!rel.tRel.Name}"/>                     
+            <apex:column headerValue="Relationship Number" value="{!rel.tRel.Relationship_Number__c}"/> 
+            <apex:column headerValue="Primary Relationship Advisor" value="{!rel.tRel.Primary_Relationship_Advisor__c}"/> 
+            <apex:column headerValue="Relationship Status" value="{!rel.tRel.Relationship_Status__c}"/>            
+        </apex:pageBlockTable>
+        </div>
+        <!-- count of selected items     -->
+            <apex:outputLabel value="[{!selectedCount} records selected]" style="display:inline;" id="tabFooter">           
+            <!-- next, previous and page info  -->
+                <apex:outputpanel style="float:right;" id="tabFooterRight">
+                    <apex:commandLink action="{!doPrevious}" rendered="{!hasPrevious}" value="Previous" reRender="results,debug"/>
+                    <apex:outputLabel rendered="{!NOT(hasPrevious)}" value="Previous" />                    
+                    <apex:outputLabel value=" (page {!pageNumber} of {!totalPages}) " />                    
+                    <apex:commandLink action="{!doNext}" rendered="{!hasNext}" value="Next" reRender="results,debug"/>
+                    <apex:outputLabel rendered="{!NOT(hasNext)}" value="Next" />
+                </apex:outputpanel>                
+            </apex:outputLabel>
+     <p style="margin-bottom:3px;"/>
+    </apex:pageBlock>    
+    </apex:outputPanel>
+    <div style="text-align:center;font-weight:bold;font-size: 125%"> 
+        <apex:outputLabel value="No Records found for your search." rendered="{!RelationshipsLstRecs.size ==0}"></apex:outputLabel>
+    </div> 
+ </apex:outputPanel> 
+ </apex:form>
+</apex:page>

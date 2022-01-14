@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ChangecustomOwner2</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>ChangecustomOwner2</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/apex.js&quot;)} 
+
+var idArray = {!GETRECORDIDS($ObjectType.Relationship__c)};
+
+var url=&quot;/apex/Customchangeowner2?&amp;ids=&quot; + idArray +&quot;&amp;retUrl=&quot;+location.href;  
+        
+window.location.replace(url);</url>
+</WebLink>

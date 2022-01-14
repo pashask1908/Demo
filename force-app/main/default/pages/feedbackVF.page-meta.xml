@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <label>feedbackVF</label>
+    <packageVersions>
+        <majorNumber>3</majorNumber>
+        <minorNumber>54</minorNumber>
+        <namespace>box</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>232</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>et4ae5</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>2</majorNumber>
+        <minorNumber>8</minorNumber>
+        <namespace>footprint</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>7</minorNumber>
+        <namespace>sf_com_apps</namespace>
+    </packageVersions>
+</ApexPage>

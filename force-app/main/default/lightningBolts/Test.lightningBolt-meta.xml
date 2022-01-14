@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningBolt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <category>FinancialServices</category>
+    <lightningBoltFeatures>
+        <order>1</order>
+        <title>Test</title>
+    </lightningBoltFeatures>
+    <lightningBoltImages>
+        <image>download</image>
+        <order>1</order>
+    </lightningBoltImages>
+    <lightningBoltItems>
+        <name>IBM_Task</name>
+        <type>CustomApplication</type>
+    </lightningBoltItems>
+    <masterLabel>Test</masterLabel>
+    <publisher>Test</publisher>
+    <summary>adfsa</summary>
+</LightningBolt>

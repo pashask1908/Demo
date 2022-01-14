@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Collapsible section using LWC">
+        <template if:true={accounts}>
+        <lightning-accordion allow-multiple-sections-open>
+            <template for:each={accounts} for:item="account" for:index="indexVar">
+                    <lightning-accordion-section key={account.Id} name={account.Name} label={account.Name}>
+                    <p><b>Id</b> : {account.Id}</p>
+                    <p><b>AccountNumber</b> : {account.AccountNumber}</p>
+                    <p><b>Phone</b> : {account.Phone}</p>
+                    <p><b>Industry</b> : {account.Industry}</p>
+                    <p><b>CreatedDate</b> : {account.CreatedDate}</p>
+                    <p><b>Type</b> : {account.Type}</p>
+                    <p><b>Rating</b> : {account.Rating}</p>
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Program --></label>
+    <name>Program__c</name>
+    <picklistValues>
+        <masterLabel>Cash Assistance</masterLabel>
+        <translation><!-- Cash Assistance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ChildCare Assistance</masterLabel>
+        <translation><!-- ChildCare Assistance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Education Assistance</masterLabel>
+        <translation><!-- Education Assistance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Food Assistance</masterLabel>
+        <translation><!-- Food Assistance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Assistance</masterLabel>
+        <translation><!-- Medical Assistance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workforce Assistance</masterLabel>
+        <translation><!-- Workforce Assistance --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

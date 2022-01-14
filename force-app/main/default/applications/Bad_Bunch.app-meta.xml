@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Bad_Bunch_Home</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#AB1714</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>This is one bad bunch of LWCs</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Bad Bunch</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>Bad_Bunch_2_Scroll_List</tabs>
+    <tabs>Bad_Bunch_3_Increase_Numbers</tabs>
+    <tabs>Bad_Bunch_4_Input_Fields</tabs>
+    <tabs>Bad_Bunch_5_Table</tabs>
+    <tabs>Bad_Bunch_6_Count_Clicks</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Bad_Bunch_UtilityBar</utilityBar>
+</CustomApplication>

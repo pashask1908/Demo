@@ -1,0 +1,55 @@
+<apex:page controller="NWD_MyBenefitsController" showHeader="false" sidebar="false" showQuickActionVfHeader="false" >
+ <!--
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      var benChartData = new Array();
+      alert('entered script');
+      <apex:repeat value="{!Benefits}" var="client">
+                     <apex:repeat value="{!client.Citizen_Benefits__r}" var="ben">
+                       
+                         var chartData = new Array();
+                        benChartData.push(chartData);
+                        chartData.push('Agency : {! ben.Agency__c} / Client : {! client.First_Name__c} {! client.Last_Name__c}');
+                        chartData.push('{! ben.Program__c}');
+                         chartData.push(new Date({! YEAR(ben.Start_Date__c)}, ({! MONTH(ben.Start_Date__c)} - 1),{! DAY(ben.Start_Date__c)}));
+                         chartData.push(new Date({! YEAR(ben.End_Date__c)}, ({! MONTH(ben.End_Date__c)} - 1), {! DAY(ben.End_Date__c)}));
+                       alert(chartData);
+                     </apex:repeat>
+               </apex:repeat>
+               google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      if (undefined != benChartData && benChartData.length > 0) {
+        alert('entered function');
+        alert(benChartData);
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+        
+        var numRows = benChartData.length;
+          
+
+        dataTable.addColumn({ type: 'string', id: 'Agency'});
+        dataTable.addColumn({ type: 'string', id: 'Program'});
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        
+        for (var i = 0; i < numRows; i++)
+            dataTable.addRow(benChartData[i]);
+            var options = {     timeline : {
+                                    showRowLabels : false
+                                }};
+
+         chart.draw(dataTable, options);
+        <!--dataTable.addRows(benChartData); 
+        
+         
+      }
+      }
+    </script>
+
+  <body>
+    <div id="timeline" style="height: 400px;"></div>
+  </body>
+-->
+</apex:page>

@@ -1,0 +1,33 @@
+<aura:component >
+    <ltng:require styles="/resource/slds202/assets/styles/salesforce-lightning-design-system.css"/>
+    
+    <div style="newsslds">
+        <div class="slds-grid .slds-grid--align-spread slds-grid--vertical-align-center">
+            <div class="slds-col">
+                <article class="slds-card slds-m-around--x-large">
+                    <c:CollapsibleLDSComp isCollapsed="true">
+                        <aura:set attribute="header">
+                            <header class="slds-card__header slds-grid">
+                                <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                                    <div class="slds-media__figure">
+                                        <c:svg xlinkHref="/resource/slds202/assets/icons/action-sprite/svg/symbols.svg#record" ariaHidden="true" class="slds-icon slds-icon-standard-orders"/>
+                                    </div>
+                                    <div class="slds-media__body slds-truncate">              
+                                        <span class="slds-text-heading--small">Collapsible LDSection and Add Alert Component Demo App</span>
+                                    </div>
+                                </div>
+                            </header>
+                        </aura:set>
+                        <aura:set attribute="body">
+                            <div class="slds-card__body slds-text-align--left slds-p-around--x-large slds-box slds-theme--default">
+                                <br/>
+                                Content
+                                
+                            </div>
+                        </aura:set>
+                    </c:CollapsibleLDSComp>
+                </article>
+            </div>
+        </div>
+    </div>
+</aura:component>

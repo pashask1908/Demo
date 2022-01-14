@@ -1,0 +1,22 @@
+<apex:page standardController="Campaign" sidebar="false" showHeader="false" extensions="CRM_CampaignAddRelationshipController">
+<apex:form >
+<apex:pageBlock title="Please Search Your Relationships to Add">
+<apex:pageBlockSection >
+<apex:pageBlockSectionItem >
+<apex:outputLabel >Enter the Relatioship to Search</apex:outputLabel>
+<apex:inputText value="{!RelName}"/>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+
+<apex:pageBlockButtons >
+<apex:commandButton value="Search" action="{!doSearch}"/>
+<apex:commandButton value="Add Selected" action="{!addSelectedToCampaign}"/>
+<apex:commandButton value="Cancel" action="{!Cancel}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!RelnList}" var="rel">
+<apex:column value="{!rel.Name}"/>
+</apex:pageBlockTable>
+
+</apex:pageBlock>
+</apex:form> 
+</apex:page>

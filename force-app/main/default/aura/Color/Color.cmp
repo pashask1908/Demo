@@ -1,0 +1,122 @@
+<aura:component >
+    <div class="slds-box slds-theme--default slds-container--large" width="100"><br/>
+        <div>
+            <h1 class="slds-text-heading_medium"><b>My Benefits</b></h1>
+    <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout">
+    <thead>
+      <tr class="slds-text-heading--label">
+        <th scope="col"><div class="slds-truncate " title="Citizen Name">Citizen Name</div></th>
+        <th scope="col"><div class="slds-truncate " title="Agency">Agency</div></th>
+        <th scope="col"><div class="slds-truncate " title="Program">Program</div></th>
+        <th scope="col"><div class="slds-truncate " title="Start Date">Start Date</div></th>
+        <th scope="col"><div class="slds-truncate " title="End Date">End Date</div></th>
+        </tr>
+    </thead>
+        <tbody>
+    <tr>
+      <td data-label="Citizen Name">
+        <div class="slds-truncate" title="Sarah Smith">Sarah Smith</div>
+      </td>
+      <td data-label="Agency">
+        <div class="slds-truncate" title="Welfare and Supportive Services(DWSS)">Welfare and Supportive Services(DWSS)</div>
+      </td>
+      <td data-label="Program">
+        <div class="slds-truncate" title="Food Assistance">Food Assistance</div>
+      </td>
+      <td data-label="Start Date">
+          <div class="slds-truncate" title="06/04/2018">06/04/2018</div>
+      </td>
+      <td data-label="End Date">
+        <div class="slds-truncate" title="06/04/2019">06/04/2019</div>
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Citizen Name">
+        <div class="slds-truncate" title="Sarah Smith">Sarah Smith</div>
+      </td>
+      <td data-label="Agency">
+        <div class="slds-truncate" title="Welfare and Supportive Services(DWSS)">Welfare and Supportive Services(DWSS)</div>
+      </td>
+      <td data-label="Program">
+        <div class="slds-truncate" title="Cash Assistance">Cash Assistance</div>
+      </td>
+      <td data-label="Start Date">
+          <div class="slds-truncate" title="05/04/2018">05/04/2018</div>
+      </td>
+      <td data-label="End Date">
+        <div class="slds-truncate" title="05/04/2019">05/04/2019</div>
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Citizen Name">
+        <div class="slds-truncate" title="Sarah Smith">Sarah Smith</div>
+      </td>
+      <td data-label="Agency">
+        <div class="slds-truncate" title="Welfare and Supportive Services(DWSS)">Welfare and Supportive Services(DWSS)</div>
+      </td>
+      <td data-label="Program">
+        <div class="slds-truncate" title="Medical Assistance">Medical Assistance</div>
+      </td>
+      <td data-label="Start Date">
+          <div class="slds-truncate" title="05/10/2018">05/10/2018</div>
+      </td>
+      <td data-label="End Date">
+        <div class="slds-truncate" title="05/10/2019">05/10/2019</div>
+      </td>
+    </tr>  
+    <tr>
+      <td data-label="Citizen Name">
+        <div class="slds-truncate" title="John Smith">John Smith</div>
+      </td>
+      <td data-label="Agency">
+        <div class="slds-truncate" title="Welfare and Supportive Services(DWSS)">Welfare and Supportive Services(DWSS)</div>
+      </td>
+      <td data-label="Program">
+        <div class="slds-truncate" title="Food Assistance">Food Assistance</div>
+      </td>
+      <td data-label="Start Date">
+          <div class="slds-truncate" title="05/15/2018">05/15/2018</div>
+      </td>
+      <td data-label="End Date">
+        <div class="slds-truncate" title="05/15/2019">05/15/2019</div>
+      </td>
+    </tr> 
+    <tr>
+      <td data-label="Citizen Name">
+        <div class="slds-truncate" title="Tommy Smith">Tommy Smith</div>
+      </td>
+      <td data-label="Agency">
+        <div class="slds-truncate" title="Welfare and Supportive Services(DWSS)">Welfare and Supportive Services(DWSS)</div>
+      </td>
+      <td data-label="Program">
+        <div class="slds-truncate" title="Cash Assistance">Cash Assistance</div>
+      </td>
+      <td data-label="Start Date">
+          <div class="slds-truncate" title="05/20/2018">05/20/2018</div>
+      </td>
+      <td data-label="End Date">
+        <div class="slds-truncate" title="05/20/2019">05/20/2019</div>
+      </td>
+    </tr>
+    <tr>
+      <td data-label="Citizen Name">
+        <div class="slds-truncate" title="Jane Smith">Jane Smith</div>
+      </td>
+      <td data-label="Agency">
+        <div class="slds-truncate" title="Welfare and Supportive Services(DWSS)">Welfare and Supportive Services(DWSS)</div>
+      </td>
+      <td data-label="Program">
+        <div class="slds-truncate" title="Medical Assistance">Medical Assistance</div>
+      </td>
+      <td data-label="Start Date">
+          <div class="slds-truncate" title="05/25/2018">05/25/2018</div>
+      </td>
+      <td data-label="End Date">
+        <div class="slds-truncate" title="05/25/2019">05/25/2019</div>
+      </td>
+    </tr>        
+  </tbody>
+ </table>
+        </div>
+    </div>
+</aura:component>

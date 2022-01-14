@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Note</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Activity Note</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>if(&apos;{!Event.Description}&apos; !== &apos;&apos;){ //replace Description with enhanced lookup field
+window.location.href = &apos;/{!Event.Description}&apos;; //replace Description with enhanced lookup field
+}
+else{
+window.location.href = &apos;/apex/NoteCreate?evtId={!Event.Id}&apos;;
+}</url>
+</WebLink>

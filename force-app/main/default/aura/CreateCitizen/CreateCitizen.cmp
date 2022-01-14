@@ -1,0 +1,29 @@
+<aura:component controller="NWD_HouseholdController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="newCit" type="NWD_Citizen__c" default="{ 'sobjectType': 'NWD_Citizen__c',
+                      'First_Name__c':'', 'Last_Name__c':'', 'DOB__c':'', 'Relationship_To_Houshold__c':'', 'Gender':''}"/>
+   <!--  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />-->
+    <fieldset class="slds-box slds-theme--default slds-container--small">
+         <form class="slds-form--stacked">
+     <lightning:input type="Text" aura:id="FirstName" label="First Name" name="FirstName" value="{!v.newCit.First_Name__c}" />
+             <lightning:input type="Text" aura:id="LastName" label="Last Name" name="LastName" value="{!v.newCit.Last_Name__c}" />
+             <lightning:select aura:id="Gender" label="Gender" name="Gender" value="{!v.newCit.Gender__c}">
+                 <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                  </lightning:select>
+             <lightning:input type="Date" aura:id="DOB" label="Date of Birth" name="DOB" value="{!v.newCit.DOB__c}" />
+             <lightning:select aura:id="Relationship" label="Relationship" name="Relationship" value="{!v.newCit.Relationship_To_Houshold__c}">
+                 <option value="Self">Self</option>
+                 <option value="Husband">Husband</option>
+                 <option value="Wife">Wife</option>
+                 <option value="Son">Son</option>
+                 <option value="Daughter">Daughter</option>
+                 <option value="Father">Father</option>
+                 <option value="Mother">Mother</option>
+                  </lightning:select>
+             <div class="slds-col slds-size_1-of-1" align="center">
+                            <lightning:button label="Save" onclick="{!c.createCitizen}" class="slds-m-top--medium" variant="brand" />
+                            <lightning:button label="Cancel" onclick="{!c.send}" class="slds-m-top--medium" />
+                        </div>
+  </form>
+                </fieldset>
+        </aura:component>

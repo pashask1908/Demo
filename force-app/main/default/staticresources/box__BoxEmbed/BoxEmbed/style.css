@@ -1,0 +1,29 @@
+/* These are the height adjustments for the Box Files tab embedded Box view */
+#classicBoxFiles {
+    height: 75vh;
+}
+
+#lightningBoxFiles {
+    height: 95vh;
+}
+
+/* These are the height adjustments for the object-specific embedded Box views */
+body, iframe {
+    overflow: hidden;
+}
+
+#classicBoxSection {
+    height: 100vh;
+}
+
+#lightningBoxSection {
+    height: 95vh;
+}
+
+#classicBoxWidget {
+    height: 100vh;
+}
+
+#lightningBoxWidget {
+    height: 95vh;
+}

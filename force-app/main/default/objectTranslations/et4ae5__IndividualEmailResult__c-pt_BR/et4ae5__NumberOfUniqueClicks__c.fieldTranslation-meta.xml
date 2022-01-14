@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>O número exclusivo de vezes que esse assinante clicou nos links desse email (exclusivo significa um clique por link)</help>
+    <label><!-- Links Clicked --></label>
+    <name>et4ae5__NumberOfUniqueClicks__c</name>
+</CustomFieldTranslation>
