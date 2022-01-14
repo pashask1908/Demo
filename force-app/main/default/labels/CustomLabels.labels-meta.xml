@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Case_Close_Card_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Case_Close_Card_Title</shortDescription>
+        <value>closeCase</value>
+    </labels>
+    <labels>
+        <fullName>Case_Complete_Field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Case_Complete_Field</shortDescription>
+        <value>completeThisField</value>
+    </labels>
+    <labels>
+        <fullName>Case_Resolution_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Case_Resolution_Label</shortDescription>
+        <value>caseResolutionLabel</value>
+    </labels>
+    <labels>
+        <fullName>Case_Save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Case_Save</shortDescription>
+        <value>save</value>
+    </labels>
+    <labels>
+        <fullName>None_Option</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>None_Option</shortDescription>
+        <value>none_Option</value>
+    </labels>
+    <labels>
+        <fullName>Policy_Member_ID</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Policy Member ID</shortDescription>
+        <value>Policy Member ID</value>
+    </labels>
+</CustomLabels>

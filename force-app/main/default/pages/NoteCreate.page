@@ -1,0 +1,23 @@
+<apex:page controller="NoteCreateController">
+  
+  <apex:sectionHeader title="Activity Note" />  
+  <apex:form >    
+    <apex:pageBlock title="Activity Note" mode="edit">
+      
+      <apex:pageBlockButtons location="top">        
+        <apex:commandButton value="Save" action="{!saveNote}"/>               
+        <apex:commandButton value="Cancel" action="{!cancelNote}"  immediate="true"/>        
+      </apex:pageBlockButtons>
+      
+      <apex:pageBlockButtons location="bottom">        
+        <apex:commandButton value="Save" action="{!saveNote}"/>               
+        <apex:commandButton value="Cancel" action="{!cancelNote}" immediate="true"/>        
+      </apex:pageBlockButtons>
+      
+      <apex:pageBlockSection title="Information" columns="1">             
+        <apex:inputField value="{!an.Private_Note__c}" required="true" style="width:80%"/>        
+      </apex:pageBlockSection>
+      
+    </apex:pageBlock>    
+  </apex:form>  
+</apex:page>

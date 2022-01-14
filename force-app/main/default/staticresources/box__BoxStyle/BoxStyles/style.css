@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    background-color: #EAEAEA;
+    border: 1px solid #EAEAEA;
+}
+
+.header {
+    position: relative;
+    height: 66px;
+    background-color: #FFFFFF;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: #CCCCCC;
+}
+
+.header-logo-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-logo {
+    margin: 0px 0px 0px 30px;
+}
+
+.outer-modal {
+    position: absolute;
+    width: 460px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-modal {
+    padding: 30px;
+    overflow: auto;
+}
+
+.title {
+    color: #222222;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0px 0px 20px 0px;
+}
+
+.paragraph {
+    color: #222222;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 0px 0px 30px 0px;
+}
+
+.button {
+    height: 34px;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 4px;
+    border-style: none;
+    float: right;
+    cursor: pointer;
+    margin: 0px 0px 0px 10px;
+    padding: 0px 20px;
+}
+
+.button:focus {
+    outline: 0;
+}
+
+.primary-button {
+    background-color: #0061D5;
+    color: #FFFFFF;
+}
+
+.primary-button:hover {
+    background-color: #1A81FF;
+}
+
+.secondary-button {
+    background-color: #FFFFFF;
+    border: 1px solid #DFDFDF;
+}
+
+.secondary-button:hover {
+    background-color: #F9F9F9;
+}
+
+.loader {
+    height: 3px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #0061D5;
+    animation-name: loading;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0%
+    }
+    to {
+        width: 99%;
+    }
+}
+
+.hidden {
+    display: none;
+}

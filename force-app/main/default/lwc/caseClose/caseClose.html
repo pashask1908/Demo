@@ -1,0 +1,66 @@
+<!--
+ - @author Cezary Zeleznicki
+ - @date 30.04.2019
+ - 
+ - @description caseClose
+ -->
+
+<!-- caseClose -->
+<template>
+    <lightning-card icon-name="standard:case_change_status">
+        <h2 slot="title" class="slds-text-heading_small text-bold">{label.closeCase}</h2>
+        <div class="slds-card__body_inner">
+            <template if:false={isClosed}>
+                <lightning-record-edit-form id="recordViewForm" record-id={recordId} object-api-name="Case"
+                                            record-type-id={recordTypeId} onsubmit={handleSubmit} onload={onLoad}
+                                            onerror={handleError} onsuccess={handleSuccess}>
+
+                    <div class="slds-hide">
+                        <lightning-input-field field-name={fields.CASE_SUBTYPE}></lightning-input-field>
+                        <lightning-input-field data-id="caseResolution" field-name={fields.CASE_RESOLUTION}></lightning-input-field>
+                    </div>
+
+                    <div>
+                        <span class="required">*</span>
+
+                        <lightning-combobox
+                                name="caseResolution"
+                                label={label.caseResolutionLabel}
+                                placeholder={label.none_Option}
+                                value={caseResolution}
+                                options={caseResolutionOptions}
+                                onchange={populateCaseResolution}>
+                        </lightning-combobox>
+
+                        <template if:true={hasResolutionError}>
+                            <ul class="has-error uiInputDefaultError uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                <li class="form-element__help" data-aura-rendered-by="6195:0">{label.completeThisField}</li>
+                            </ul>
+                        </template>
+                    </div>
+
+                    <div>
+                        <span class="required">*</span>
+                        <lightning-input-field field-name={fields.RESOLUTION_DESCRIPTION}></lightning-input-field>
+
+                        <template if:true={hasResolutionDescError}>
+                            <ul class="has-error uiInputDefaultError uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                <li class="form-element__help" data-aura-rendered-by="6195:0">{label.completeThisField}</li>
+                            </ul>
+                        </template>
+                    </div>
+
+                    <lightning-button id="submit"
+                                      type="submit"
+                                      label={label.save}
+                                      class="slds-m-top_medium">
+                    </lightning-button>
+                </lightning-record-edit-form>
+            </template>
+        </div>
+    </lightning-card>
+
+    <template if:true={isSpinnerShown}>
+        <lightning-spinner size="medium"></lightning-spinner>
+    </template>
+</template>

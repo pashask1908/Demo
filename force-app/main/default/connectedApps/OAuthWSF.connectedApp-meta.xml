@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>pashask1908@gmail.com</contactEmail>
+    <label>OAuthWSF</label>
+    <oauthConfig>
+        <callbackUrl>https://www.google.com/oauth2/callback</callbackUrl>
+        <consumerKey>3MVG9Y6d_Btp4xp6KQWkMkt31fkVk6nCfFPvmU7FT8w9ES1iYQ1AJT59Sbjfq6Mzf9OhYDRfV63V0u_WapSsU</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>zero</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>System Administrator</profileName>
+</ConnectedApp>

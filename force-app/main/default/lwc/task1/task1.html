@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name='action:info' title='Math Component'>
+      <div class="slds-m-around_medium">
+        <lightning-layout-item>
+          <lightning-input label='Value 1' type="number" onchange={value1Tracking} ></lightning-input>
+          <lightning-input label='Value 2' type="number" onchange={value2Tracking}></lightning-input><br/>
+          <lightning-button label="Add" onclick={add} icon-name='utility:add'> </lightning-button>    
+          <lightning-button label="Sub" onclick={subtract} icon-name='utility:dash'> </lightning-button>
+          <lightning-button label="Multiply" onclick={multiply} icon-name='utility:wifi'> </lightning-button>
+          <lightning-button label="Division" onclick={division} icon-name='utility:dash'> </lightning-button>
+        </lightning-layout-item><br/>
+        <div class="valueDisplay">
+         Calculated value : {value}
+        </div>
+      </div>
+    </lightning-card>    
+  </template>

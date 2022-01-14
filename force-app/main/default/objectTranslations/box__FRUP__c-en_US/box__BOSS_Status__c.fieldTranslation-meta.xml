@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- BOSS Status --></label>
+    <name>box__BOSS_Status__c</name>
+    <picklistValues>
+        <masterLabel>Converted</masterLabel>
+        <translation><!-- Converted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Converted_Move</masterLabel>
+        <translation><!-- Converted_Move --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deleted</masterLabel>
+        <translation><!-- Deleted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Error</masterLabel>
+        <translation><!-- Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N</masterLabel>
+        <translation><!-- N --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Processed</masterLabel>
+        <translation><!-- Processed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Y</masterLabel>
+        <translation><!-- Y --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

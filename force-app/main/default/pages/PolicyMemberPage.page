@@ -1,0 +1,29 @@
+<apex:page controller="EclipseController">
+    <apex:includeScript value="/support/console/31.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.PolicyMemberPage}"/>    
+    
+    <script type="text/javascript">
+    var policyMemberId = '{!objPolicyMember.Id}';
+    var primaryTabId = '';
+    </script>
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Benefit Snapshot">
+           
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Policy_Member_ID}" style="Float:right;"></apex:outputLabel>
+               
+                <apex:outputLink value="#" onclick="testOpenSubtab(); return false" style="Float:right;">{!objPolicyMember.Name}</apex:outputLink>
+              </apex:pageBlockSectionItem>
+            
+            
+            
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Benefit Summary">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Policy_Member_ID}"></apex:outputLabel>
+                <apex:outputLink value="#" onclick="testOpenSubtab(); return false" style="Float:centre;">Policy</apex:outputLink>
+            </apex:pageBlockSectionItem>
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock> 
+</apex:page>

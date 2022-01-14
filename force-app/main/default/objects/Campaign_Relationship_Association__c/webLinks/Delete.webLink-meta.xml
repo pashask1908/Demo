@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delete</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Delete</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)}
+var records = {!GETRECORDIDS($ObjectType.Campaign_Relationship_Association__c)};
+function timedRefresh(timeoutPeriod) {
+    setTimeout(&quot;location.reload(true);&quot;,timeoutPeriod);
+}
+if(records.length&lt;1) {
+alert(&quot;Please choose at least one record to delete.&quot;);
+} else {
+var command;
+var r = confirm(&quot;Are you sure&quot;);
+if (r==true) {
+command = sforce.apex.execute(&quot;CRM_CampaignAddselected&quot;,&quot;deleteRelationshipFromCampaign&quot;, {&quot;records&quot;: records});
+alert(command);
+timedRefresh(2000);
+}
+
+ else {
+
+command = &apos;Error: No action taken&apos;;
+alert(command);
+
+}
+}</url>
+</WebLink>

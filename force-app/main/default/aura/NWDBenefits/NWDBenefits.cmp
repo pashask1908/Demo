@@ -1,0 +1,180 @@
+<aura:component controller="NWD_MyBenefitsController" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="benefits" type="List" />
+    <aura:attribute name="citizens" type="List" />
+    <aura:attribute name="arrowDirection" type="string" default="arrowup" description="Use for change arrow sign direction on header based on click"/>
+    <aura:attribute name="isAsc" type="boolean" default="true" description="boolean flag for pass sorting condition to apex class"/> 
+    <aura:attribute name="selectedTabsoft" type="string" default="CitizenName" description="Use for show/hide arraow sign on header based on conditions"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="mouseStart" type="string" />
+    <aura:attribute name="oldWidth" type="string" />
+    <div class="slds-box slds-theme--default slds-container--large" width="100">
+        <h1 class="slds-text-heading_medium"><b>My Benefits</b></h1>
+        <table class="slds-table slds-table--bordered  slds-table--striped slds-table--cell-buffer slds-table--fixed-layout"  >
+            <thead>
+                <tr class="slds-text-heading--label slds-line-height--reset">
+                    <th class="slds-is-sortable slds-is-resizable " scope="col" onclick="{!c.sortCitizenName}">
+                        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                         <span class="slds-assistive-text">Sort</span>
+                        <div class="slds-truncate" title="Citizen Name"><b>Citizen Name</b></div>
+                           <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Citizen Name') }">&nbsp;  &#9660; </aura:if>  
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Citizen Name') }"> &nbsp;  &#9650; </aura:if> 
+                       </a>
+                    </th>
+                    
+                    <th class="slds-is-sortable slds-is-resizable table-head" scope="col" onclick="{!c.sortAgency}">
+                        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                         <span class="slds-assistive-text">Sort</span>
+                        <div class="slds-truncate" title="Agency"><b>Agency</b></div>
+                           <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Agency') }">&nbsp;  &#9660; </aura:if>  
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Agency') }"> &nbsp;  &#9650; </aura:if> 
+                       </a>
+                    </th>
+                    
+                    <th class="slds-is-sortable slds-is-resizable table-head" scope="col" onclick="{!c.sortProgram}">
+                        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                         <span class="slds-assistive-text">Sort</span>
+                        <div class="slds-truncate" title="Program"><b>Program</b></div>
+                           <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Program') }">&nbsp;  &#9660; </aura:if>  
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Program') }"> &nbsp;  &#9650; </aura:if> 
+                       </a>
+                    </th>
+                    
+                    <th class="slds-is-sortable slds-is-resizable table-head" scope="col" onclick="{!c.sortStartDate}">
+                        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                         <span class="slds-assistive-text">Sort</span>
+                        <div class="slds-truncate" title="Start Date"><b>Start Date</b></div>
+                           <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Start Date') }">&nbsp;  &#9660; </aura:if>  
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Start Date') }"> &nbsp;  &#9650; </aura:if> 
+                       </a>
+                    </th>
+                    
+                    <th class="slds-is-sortable slds-is-resizable table-head" scope="col" onclick="{!c.sortEndDate}">
+                        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                         <span class="slds-assistive-text">Sort</span>
+                        <div class="slds-truncate" title="End Date"><b>End Date</b></div>
+                           <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'End Date') }">&nbsp;  &#9660; </aura:if>  
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'End Date') }"> &nbsp;  &#9650; </aura:if> 
+                       </a>
+                    </th>
+                    
+                    
+                    <!--
+                    <th class="slds-is-resizable table-head" scope="col"><div class="slds-truncate" title="Agency"><b>Agency</b></div>
+                        <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th class="slds-is-resizable table-head" scope="col"><div class="slds-truncate" title="Program"><b>Program</b></div>
+                        <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th class="slds-is-resizable table-head" scope="col"><div class="slds-truncate" title="Start Date"><b>Start Date</b></div>
+                        <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th class="slds-is-resizable table-head" scope="col"><div class="slds-truncate" title="End Date"><b>End Date</b></div>
+                        <div class="slds-resizable">
+                            <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-602" tabindex="0" />
+                            <span class="slds-resizable__handle" onmousedown="{!c.calculateWidth}" ondrag="{!c.setNewWidth}">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th> -->
+                </tr>
+            </thead>
+            <tbody>
+                
+               <aura:iteration items="{!v.citizens}" var="ben">
+                     
+                    <tr class="slds-hint-parent">
+                        <td data-label="Citizen Name">
+                            <div class="slds-truncate" title="{!ben.Citizen__r.Name}">{!ben.Citizen__r.Name}</div>
+                        </td>
+                        <td data-label="Agency"  >
+                            <div class="slds-truncate" title="{!ben.Agency__c}">{!ben.Agency__c}</div>
+                        </td>
+                        <td data-label="Program"  >
+                            <div class="slds-truncate" title="{!ben.Program__c}">{!ben.Program__c}</div>
+                        </td>
+                        <td data-label="Start Date"  >
+                            <div class="slds-truncate" title="{!ben.Start_Date__c}">{!ben.Start_Date__c}</div>
+                        </td>
+                        <td data-label="End Date"  >
+                            <div class="slds-truncate" title="{!ben.End_Date__c}">{!ben.End_Date__c}</div>
+                        </td>
+                    </tr>
+                
+                </aura:iteration>
+                
+            </tbody>
+        </table>
+    </div>
+   
+    <div style="height: 20px;"></div>
+    <div class=" slds-theme--default slds-container--large" width="100" align="center">
+    <lightning:button label="Add Family Member" onclick="{!c.openmodal}"  class="table-head"/>
+   </div>
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" aura:id="Modalbox" class="slds-modal">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+                    <lightning:icon iconName="utility:close" size="large" alternativeText="sss"/>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="header43" class="slds-text-heading--medium">Add Family Member</h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <div>
+                    <c:CreateCitizen />
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop " aura:id="Modalbackdrop"></div>
+    <div style="height: 100px;"></div>
+    
+    <lightning:button label="Create Citizen" variant="brand" onclick="{!c.createCitizen}"/> 
+</aura:component>

@@ -1,0 +1,21 @@
+<apex:page controller="CustomOwner">
+  <apex:form >
+   <apex:pageBlock title="Select New Owner">
+    <apex:pageBlockSection >
+     <apex:pageBlockSectionItem >
+      <apex:outputLabel >Owner</apex:outputLabel>
+       <apex:inputfield value="{!a.ownerid}"/>
+      </apex:pageBlockSectionItem>
+         <apex:pageblockSectionItem ><br/></apex:pageblockSectionItem>
+          <apex:pageBlockSectionItem >
+           <apex:outputLabel >Send Notification email</apex:outputLabel>
+            <apex:inputCheckbox value="{!check}"/>
+          </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+         <apex:pageBlockButtons location="bottom">
+          <apex:commandButton value="Save" action="{!saveowner}"/>
+           <apex:commandButton value="Cancel" action="{!Cancelowner}"/>
+         </apex:pageBlockButtons>
+        </apex:pageBlock>
+       </apex:form>
+      </apex:page>

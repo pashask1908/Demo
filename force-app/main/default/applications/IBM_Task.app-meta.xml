@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>IBM Task</label>
+    <tabs>Relationship__c</tabs>
+    <tabs>Financial_Account__c</tabs>
+    <tabs>standard-Campaign</tabs>
+    <tabs>Eclipse__c</tabs>
+    <tabs>Activity_Note__c</tabs>
+    <tabs>Camping_Item__c</tabs>
+    <tabs>Expense__c</tabs>
+    <tabs>NWD_Citizen__c</tabs>
+    <tabs>ClientBenefit__c</tabs>
+    <tabs>NWD_Household__c</tabs>
+</CustomApplication>

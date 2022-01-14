@@ -1,0 +1,32 @@
+<apex:page controller="CustomOwnershipController" tabStyle="Relationship__c" >
+  
+ <apex:form >
+       <apex:pageBlock title="Select New Owner">
+            <apex:pageBlockSection >
+         <apex:pageBlockSectionItem >
+         <apex:outputLabel >Owner</apex:outputLabel>
+         <apex:inputfield value="{!a.ownerid}"/>
+         </apex:pageBlockSectionItem>
+         
+         <!-- <apex:pageblockSectionItem ><br/></apex:pageblockSectionItem> -->
+          <apex:pageBlockSectionItem >
+          <apex:outputLabel >Send Notification email</apex:outputLabel>
+          <apex:inputCheckbox value="{!check}"/>
+          </apex:pageBlockSectionItem> 
+          
+                           
+     </apex:pageBlockSection>
+     
+     <apex:pageBlockButtons location="bottom">
+      <apex:commandButton action="{!Saveown}" value="Save"/>
+      <apex:commandbutton action="{!Cancel}" value="Cancel" onclick="closewindow()" immediate="true"/>
+      </apex:pageBlockButtons>      
+     </apex:pageBlock>
+    </apex:form>   
+    <script>  
+  function closewindow(){  
+   window.history.back();
+   }  
+   
+ </script>  
+</apex:page>

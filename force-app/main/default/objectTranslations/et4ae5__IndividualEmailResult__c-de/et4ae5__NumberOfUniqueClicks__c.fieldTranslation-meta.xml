@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Die Häufigkeit, mit der der Abonnent einmalig auf die Links in dieser E-Mail geklickt hat (&quot;einmalig&quot; bedeutet ein Klick pro Link).</help>
+    <label><!-- Links Clicked --></label>
+    <name>et4ae5__NumberOfUniqueClicks__c</name>
+</CustomFieldTranslation>

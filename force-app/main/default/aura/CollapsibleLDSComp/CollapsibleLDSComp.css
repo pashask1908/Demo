@@ -1,0 +1,11 @@
+.THIS.slds-section {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
+.THIS .slds-section__content{
+    padding-top: 0rem !important;
+}
+
+.THIS header{
+    display:inline-block;
+}

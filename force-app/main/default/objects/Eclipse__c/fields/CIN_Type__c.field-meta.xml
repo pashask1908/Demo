@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIN_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+ISBLANK(Account__c), NOT(ISBLANK(Relationship__c)) 
+) , &apos;Relationship&apos;,  IF(
+AND(
+ISBLANK(Relationship__c), NOT(ISBLANK(Account__c)) 
+) , &apos;Person&apos;, 
+&apos;Person &amp; Relationship&apos;
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CIN Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
